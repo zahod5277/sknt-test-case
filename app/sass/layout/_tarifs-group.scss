@@ -1,10 +1,57 @@
 .tarifs-group__item{
     background-color: white;
-    padding: 10px 15px 5px;
+    padding: 10px 0px 5px 15px;
     margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $grey;
 }
 
 .tarifs-group__item-title{
     color:$green;
+    margin-bottom: 5px;
+}
+
+.tarifs-group__item-speed-outer{
+    position: relative;
+    height:65px;
+}
+
+.tarifs-group__item-speed{
+    background: #70603e;
+    color:white;
+    padding: 10px 15px;
+    font-weight: bold;
+    display: inline-block;
+    font-weight: bold;
+    position: absolute;
+    width: 7%;
+    text-align: right;
+    left: -16px;
+}
+
+.tarifs-group__item-price{
+    padding: 10px 0px;
+    font-weight: bold;
+}
+
+.tarifs-group__item-wrapper{
+    border: 1px solid $grey;
+    border-width: 1px 0px;
+    padding: 10px 0px;
+}
+
+.tarifs-group__item-wrapper--no-border{
+    border-width: 0px;
+}
+
+.tarifs-group__item-wrapper--no-padding{
+    padding: 0px;
+}
+
+.tarifs-group__item-link{
+    padding: 10px 0px;
+    font-weight: bold;
+}
+
+.tarifs-group__item-link a{
+    color: $blue;
 }

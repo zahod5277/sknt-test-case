@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
         <link rel="stylesheet" href="/assets/template/styles/app.min.css"/>
         <title>{$pagetitle}</title>
     </head>
@@ -16,14 +16,21 @@
                     </div>
                     <div class="tarifs-group__item-info">
                         <div class="tarifs-group__item-wrapper">
-                            <div class="tarifs-group__item-speed">
-                                {$data['speed']} Мбит/с
+                            <div class="tarifs-group__item-speed-outer">
+                                <span class="tarifs-group__item-speed">
+                                    {$data['speed']} Мбит/с
+                                </span>
                             </div>
                             <div class="tarifs-group__item-price">
                                 {$data['min_price']} - {$data['max_price']} ₽/мес
                             </div>
+                            <div class="tarifs-group__item-options">
+                                {if $data['options']?}
+                                    {$data['options']|join:', '}
+                                {/if}
+                            </div>
                         </div>
-                        <div class="tarifs-group__item-wrapper">
+                        <div class="tarifs-group__item-wrapper tarifs-group__item-wrapper--no-border tarifs-group__item-wrapper--no-padding">
                             <div class="tarifs-group__item-more">
 
                             </div>
