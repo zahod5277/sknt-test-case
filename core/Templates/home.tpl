@@ -5,6 +5,7 @@
         <title>{$pagetitle}</title>
     </head>
     <body>
-        <h1>Привет, мир!</h1>
+        <h1>{$title}</h1>
+        {$JSON|var_dump}
     </body>
 </html>
