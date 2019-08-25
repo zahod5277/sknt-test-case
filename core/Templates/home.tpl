@@ -13,7 +13,7 @@
                     <div class="tarifs-group__item-title">
                         <h3>{$data.title}</h3>
                     </div>
-                    <a class="tarifs-group__item-info" href="#" data-select="group">
+                    <a class="tarifs-group__item-info" href="#" data-select="group" data-group="{$data['title']}">
                         <div class="tarifs-group__item-wrapper tarifs-group__item-info-inner">
                             <div class="tarifs-group__item-speed-outer">
                                 <span class="tarifs-group__item-speed tarifs-group__item-speed--{$data['class']}">

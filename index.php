@@ -5,7 +5,20 @@ if (!class_exists('Core')) {
 	require_once 'core/Core.php';
 }
 $Core = new Core();
+
+//
+//if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH'])=='xmlhttprequest'){
+//    return 'HEEEEEEELO';
+//    if (!empty($_POST['action'])) {return 'HELLO';}
+//}
+
 $req = !empty($_REQUEST['q'])
 	? trim($_REQUEST['q'])
 	: '';
-$Core->handleRequest($req,[]);
+$data = [];
+$data = [
+    'action' => isset($_REQUEST['action']) ? $_REQUEST['action'] : '',
+    'group' =>  isset($_REQUEST['group']) ? $_REQUEST['group'] : '',
+];
+
+$Core->handleRequest($req,$data);

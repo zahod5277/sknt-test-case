@@ -71,7 +71,7 @@ class Core {
      * Очень простой маршрутизатор
      * @param $uri
      */
-    public function handleRequest($uri) {
+    public function handleRequest($uri,$data = array()) {
         // Определяем страницу для вывода
         $request = explode('/', $uri);
         // Имена контроллеров у нас с большой буквы
