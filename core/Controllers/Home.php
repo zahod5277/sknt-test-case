@@ -56,6 +56,7 @@ class Controllers_Home extends Controller {
                 'data' => $group['tarifs'],
                 'speed' => $group['speed'],
                 'link' => $group['link'],
+                'class' => $this->findClass($group['title'])
             ];
             
             if (!empty($group['free_options'])){
@@ -71,6 +72,17 @@ class Controllers_Home extends Controller {
             $i++;
         }
         return $groups;
+    }
+    
+    public function findClass($title) {
+        $lexicons = [
+            'Земля' => 'earth',
+            'Вода' => 'water',
+            'Вода HD' => 'water',
+            'Огонь' => 'fire',
+            'Огонь HD' => 'fire',
+        ];
+        return $lexicons[$title];
     }
 
 }

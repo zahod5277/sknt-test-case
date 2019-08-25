@@ -17,7 +17,7 @@
                     <div class="tarifs-group__item-info">
                         <div class="tarifs-group__item-wrapper">
                             <div class="tarifs-group__item-speed-outer">
-                                <span class="tarifs-group__item-speed">
+                                <span class="tarifs-group__item-speed tarifs-group__item-speed--{$data['class']}">
                                     {$data['speed']} Мбит/с
                                 </span>
                             </div>

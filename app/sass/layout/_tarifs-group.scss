@@ -16,7 +16,6 @@
 }
 
 .tarifs-group__item-speed{
-    background: #70603e;
     color:white;
     padding: 10px 15px;
     font-weight: bold;
@@ -26,6 +25,18 @@
     width: 7%;
     text-align: right;
     left: -16px;
+}
+
+.tarifs-group__item-speed--earth{
+    background: $earth;
+}
+
+.tarifs-group__item-speed--water{
+    background: $water;
+}
+
+.tarifs-group__item-speed--fire{
+    background: $fire;
 }
 
 .tarifs-group__item-price{
