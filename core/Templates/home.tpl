@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
 
-        <link rel="stylesheet" href="/assets/template/css/style.css"/>
+        <link rel="stylesheet" href="/assets/template/styles/app.min.css"/>
         <title>{$pagetitle}</title>
     </head>
     <body>
