@@ -28,7 +28,7 @@ class Controller {
      *
      * @return string
      */
-    public function run() {
+    public function run($data = array()) {
         return "Hello World!";
     }
 

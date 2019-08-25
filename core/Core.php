@@ -95,7 +95,7 @@ class Core {
         $controller = new $class($this);
         $initialize = $controller->initialize($request);
         if ($initialize === true) {
-            $response = $controller->run();
+            $response = $controller->run($data);
         } elseif (is_string($initialize)) {
             $response = $initialize;
         } else {

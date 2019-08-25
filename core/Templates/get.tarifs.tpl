@@ -1,1 +1,2 @@
-{$pagetitle}
+{$JSON|var_dump}
+

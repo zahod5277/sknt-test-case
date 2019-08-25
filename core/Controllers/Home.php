@@ -21,7 +21,7 @@ class Controllers_Home extends Controller {
     /**
      * @return string
      */
-    public function run() {
+    public function run($data = array()) {
         if (!class_exists('JSON_parser')) {
             require $this->core->config['corePath'].'/Json_parser.php';
         }

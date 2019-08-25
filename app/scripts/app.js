@@ -1,7 +1,9 @@
 var App = {
 
     options: {
-        groupSelector: '[data-select="group"]'
+        groupSelector: '[data-select="group"]',
+        tarifsContainer: '.tarifs',
+        tarifsContainerVisibleClass: 'tarifs--visible'
     },
 
     init: function () {
@@ -22,7 +24,12 @@ $(document).ready(function () {
                     group: group,
                 },
                 function (resp) {
-                    console.log(resp)
+                    $(App.options.tarifsContainer).html(resp);
+                    $('html, body').css({
+                        overflow: 'hidden',
+                        height: '100%'
+                    });
+                    $(App.options.tarifsContainer).addClass(App.options.tarifsContainerVisibleClass);
                 });
     })
     App.init();
