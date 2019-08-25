@@ -15,7 +15,7 @@
                         <h3>{$data.title}</h3>
                     </div>
                     <div class="tarifs-group__item-info">
-                        <div class="tarifs-group__item-wrapper">
+                        <div class="tarifs-group__item-wrapper tarifs-group__item-info-inner">
                             <div class="tarifs-group__item-speed-outer">
                                 <span class="tarifs-group__item-speed tarifs-group__item-speed--{$data['class']}">
                                     {$data['speed']} Мбит/с
@@ -30,9 +30,9 @@
                                 {/if}
                             </div>
                         </div>
-                        <div class="tarifs-group__item-wrapper tarifs-group__item-wrapper--no-border tarifs-group__item-wrapper--no-padding">
+                        <div class="tarifs-group__item-wrapper tarifs-group__item-info-arrow">
                             <div class="tarifs-group__item-more">
-
+                                <i class="arrow arrow--right"></i>
                             </div>
                         </div>
                     </div>
