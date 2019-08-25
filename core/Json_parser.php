@@ -12,8 +12,8 @@ class JSON_parser {
 
     public function getData($uri) {
         $JSON = $this->getJSON($uri);
-        $data = json_decode($JSON);
-        if ($data->result != 'ok'){
+        $data = json_decode($JSON,1);
+        if ($data['result'] != 'ok'){
             $output['description'] = 'ERROR JSON PARSE';
             $output['status'] = 'ERROR';
         } else {
