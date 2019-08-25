@@ -7,14 +7,13 @@
         <title>{$pagetitle}</title>
     </head>
     <body>
-        <h1>{$title}</h1>
         <div class="tarifs-group">
             {foreach $JSON as $data}
                 <div class="tarifs-group__item">
                     <div class="tarifs-group__item-title">
                         <h3>{$data.title}</h3>
                     </div>
-                    <div class="tarifs-group__item-info">
+                    <a class="tarifs-group__item-info" href="#" data-select="group">
                         <div class="tarifs-group__item-wrapper tarifs-group__item-info-inner">
                             <div class="tarifs-group__item-speed-outer">
                                 <span class="tarifs-group__item-speed tarifs-group__item-speed--{$data['class']}">
@@ -35,7 +34,7 @@
                                 <i class="arrow arrow--right"></i>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="tarifs-group__item-link">
                         <a href="{$data['link']}" target="_blank">Узнать подробнее на сайте www.sknt.ru</a>
                     </div>
@@ -43,6 +42,6 @@
             {/foreach}
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-        <script src="/assets/template/js/app.js"></script>
+        <script src="/assets/template/scripts/main.min.js"></script>
     </body>
 </html>
