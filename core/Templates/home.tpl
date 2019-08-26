@@ -10,7 +10,7 @@
         <div class="tarifs-group">
             {foreach $JSON as $data}
                 <div class="tarifs-group__item">
-                    <div class="tarifs-group__item-title">
+                    <div class="tarifs-group__item-title heading">
                         <h3>{$data.title}</h3>
                     </div>
                     <a class="tarifs-group__item-info" href="#" data-select="group" data-group="{$data['title']}">
@@ -20,10 +20,10 @@
                                     {$data['speed']} Мбит/с
                                 </span>
                             </div>
-                            <div class="tarifs-group__item-price">
+                            <div class="tarifs-group__item-price price">
                                 {$data['min_price']} - {$data['max_price']} ₽/мес
                             </div>
-                            <div class="tarifs-group__item-options">
+                            <div class="tarifs-group__item-options text">
                                 {if $data['options']?}
                                     {$data['options']|join:', '}
                                 {/if}

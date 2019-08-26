@@ -29,7 +29,7 @@ class Controllers_Home extends Controller {
         if ($fenom = $this->core->getFenom()) {
             $tarifs = $JSON->getData('https://www.sknt.ru/job/frontend/data.json');
             if ($tarifs['status'] != 'ERROR'){
-                $groups = $this->getTarifsGroup($tarifs['data']['tarifs']);
+                $groups = $JSON->getTarifsGroup($tarifs['data']['tarifs']);
             } else {
                 $groups = [];
             }
@@ -41,48 +41,6 @@ class Controllers_Home extends Controller {
         } else {
             return '';
         }
-    }
-    
-    public function getTarifsGroup($data){
-        if (empty($data)){
-            return $this->core->log('JSON DATA IS EMPTY!');
-        }
-        $groups = [];
-        $i = 0;
-        //return '<pre>'.print_r($data,1).'</pre>';
-        foreach ($data as $group){
-            $groups[$i] = [
-                'title' => $group['title'],
-                'data' => $group['tarifs'],
-                'speed' => $group['speed'],
-                'link' => $group['link'],
-                'class' => $this->findClass($group['title'])
-            ];
-            
-            if (!empty($group['free_options'])){
-                $groups[$i]['options'] = $group['free_options'];
-            }
-            
-            $prices = [];
-            foreach ($groups[$i]['data'] as $g){
-                $prices[] = $g['price'];
-            }
-            $groups[$i]['min_price'] = min($prices);
-            $groups[$i]['max_price'] = max($prices);
-            $i++;
-        }
-        return $groups;
-    }
-    
-    public function findClass($title) {
-        $lexicons = [
-            'Земля' => 'earth',
-            'Вода' => 'water',
-            'Вода HD' => 'water',
-            'Огонь' => 'fire',
-            'Огонь HD' => 'fire',
-        ];
-        return $lexicons[$title];
     }
 
 }
