@@ -114,10 +114,14 @@ class JSON_parser {
             if ($group['title'] == $filter) {
                 foreach ($group['tarifs'] as $g) {
                     if ($g['ID'] == $id) {
+                        //да, с датой/временем я не очень хорошо, поэтому чото наковырял
+                        $payday = DateTime::createFromFormat("U",(explode('+', $g['new_payday'])[0]));
+                        $payday->setTimezone(new DateTimeZone('+'.(explode('+', $g['new_payday'])[1])));
+                        
                         $result = [
                             'title' => $filter,
                             'period' => $g['pay_period'],
-                            'payday' => strftime('%d.%m.%Y',$g['new_payday']),
+                            'payday' => $payday->format('d.m.Y'),
                             'price' => $g['price'] / $g['pay_period'],
                             'payment' => $g['price']
                         ];

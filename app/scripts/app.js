@@ -1,52 +1,43 @@
 var App = {
 
     options: {
-        groupSelector: '[data-select="group"]',
-        tarifsGroupsContainer: '.tarifs-group',
-        tarifsContainer: '.tarifs',
-        tarifsContainerVisibleClass: 'tarifs--visible',
-        tarifsSelector: '[data-select="tarif"]'
+        screen: ['group', 'GetTarifs', 'GetTarif']
     },
 
     init: function () {
-
+        
     },
-    screenBackward: function () {
-
+    screenBackward: function (current) {
+        console.log('[data-select-parent="'+App.options.screen[App.options.screen.indexOf(current)]+'"]');
+        $('[data-select-parent="'+App.options.screen[App.options.screen.indexOf(current)+1]+'"]').hide();
+        $('[data-select-parent="'+App.options.screen[App.options.screen.indexOf(current)]+'"]').show();
     },
-    screenForward: function () {
-
+    screenForward: function (current) {
+        $('[data-select-parent="'+App.options.screen[App.options.screen.indexOf(current)-1]+'"]').hide();
+        $('[data-select-parent="'+App.options.screen[App.options.screen.indexOf(current)]+'"]').show();
     }
 }
 
 $(document).ready(function () {
-    $('body').on('click', App.options.groupSelector, function (e) {
+    $('body').on('click', '[data-select]', function (e) {
         e.preventDefault();
-        var group = $(this).data('group');
+        var group = $(this).data('group'),
+                action = $(this).data('action'),
+                id = $(this).data('id');
         $.post(
-                'index.php', {
-                    q: 'GetTarifs',
-                    group: group,
-                },
-                function (resp) {
-                    $(App.options.tarifsContainer).html(resp);
-                    $(App.options.tarifsGroupsContainer).hide();
-                    $(App.options.tarifsContainer).addClass(App.options.tarifsContainerVisibleClass);
-                });
+            'index.php', {
+                q: action,
+                group: group,
+                id: id
+            },
+            function (resp) {
+                console.log(App.options.screen[App.options.screen.indexOf(action)-1]);
+                $('[data-select-parent="'+action+'"]').html(resp);
+                App.screenForward(action);
+            });
     });
-    $('body').on('click', App.options.tarifsSelector, function (e) {
-        e.preventDefault();
-        var id = $(this).data('id'),
-            group = $(this).data('group');
-        $.post(
-                'index.php', {
-                    q: 'GetTarif',
-                    id: id,
-                    group: group
-                },
-                function (resp) {
-                    console.log(resp);
-                });
+    $('body').on('click', '[data-backward]', function(e){
+       e.preventDefault();
+       App.screenBackward($(this).data('backward'));
     });
-    App.init();
 });

@@ -1,0 +1,14 @@
+.btn{
+    border:none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 15px;
+    margin: 5px 0px;
+    cursor: pointer;
+}
+
+.btn--default{
+    background: $green;
+    color:white;
+}

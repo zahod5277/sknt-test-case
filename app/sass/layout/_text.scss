@@ -6,3 +6,16 @@
 .text--centered{
     text-align: center;
 }
+
+.text--margined{
+    margin: 10px 0px;
+}
+
+.text--light{
+    color:$grey;
+}
+
+.text--border-separated{
+    padding-bottom: 5px;
+    border-bottom: 1px $grey solid;
+}

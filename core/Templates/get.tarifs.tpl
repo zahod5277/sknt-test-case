@@ -1,12 +1,12 @@
 <div class="tarifs__heading">
-    <div class="tarifs__heading-backward">
+    <a href="#" class="tarifs__heading-backward" data-backward="group">
         <i class="arrow arrow--left arrow--green"></i>
-    </div>
+    </a>
     <h3 class="tarifs__heading-text">Тариф {$JSON['title']}</h3>
 </div>
 <div class="tarifs__outer">
     {foreach $JSON.tarifs as $data}
-        <a class="tarifs__item" href="#" data-id="{$data.id}" data-select="tarif" data-group="{$JSON['title']}">
+        <a class="tarifs__item" href="#" data-id="{$data.id}" data-action="GetTarif" data-select="tarif" data-group="{$JSON['title']}">
             <h3 class="heading heading--border">{$data.period} месяц</h3>
             <div class="data flex-container">
                 <div class="data__item">
