@@ -100,7 +100,32 @@ class JSON_parser {
                 $i++;
             }
         }
-        return $trfs;
+        $tarifs = [
+            'title' => $filter,
+            'tarifs' => $trfs
+        ];
+        return $tarifs;
+    }
+
+    public function getTarif($data, $id, $filter) {
+        $result = [];
+        foreach ($data as $group) {
+            //die(var_dump($group));
+            if ($group['title'] == $filter) {
+                foreach ($group['tarifs'] as $g) {
+                    if ($g['ID'] == $id) {
+                        $result = [
+                            'title' => $filter,
+                            'period' => $g['pay_period'],
+                            'payday' => strftime('%d.%m.%Y',$g['new_payday']),
+                            'price' => $g['price'] / $g['pay_period'],
+                            'payment' => $g['price']
+                        ];
+                    }
+                }
+            }
+        }
+        return $result;
     }
 
     public function findClass($title) {

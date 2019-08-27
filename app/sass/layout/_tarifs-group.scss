@@ -6,10 +6,6 @@
 }
 
 .tarifs-group__item-info{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
     border: 1px solid $grey;
     border-width: 1px 0px;
     padding: 10px 0px;
@@ -17,15 +13,6 @@
     &:hover{
         text-decoration: none;
     }
-}
-
-.tarifs-group__item-info-inner{
-    flex:0 0 97%;
-}
-
-.tarifs-group__item-info-arrow{
-    flex: 0 0 3%;
-    text-align: center;
 }
 
 .tarifs-group__item-speed-outer{

@@ -4,7 +4,7 @@ if (!class_exists('Controller')) {
     require_once dirname(dirname(__FILE__)) . '/Controller.php';
 }
 
-class Controllers_GetTarifs extends Controller {
+class Controllers_GetTarif extends Controller {
 
     //http://zahod5277.beget.tech/index.php?&q=GetTarifs&group=%D0%92%D0%BE%D0%B4%D0%B0
     public function run($data = array()) {
@@ -14,16 +14,17 @@ class Controllers_GetTarifs extends Controller {
         $JSON = new JSON_parser();
         $tarifs = $JSON->getData('https://www.sknt.ru/job/frontend/data.json');
         if ($tarifs['status'] != 'ERROR') {
-            $trfs = $JSON->getTarifsByGroup($tarifs['data']['tarifs'],$data['group']);
+            $tarif = $JSON->getTarif($tarifs['data']['tarifs'], $data['id'],$data['group']);
         } else {
-            $trfs = [];
+            $tarif = [];
         }
         if ($fenom = $this->core->getFenom()) {
-            return $fenom->fetch('get.tarifs.tpl', [
-                        'JSON' => $trfs
+            return $fenom->fetch('get.tarif.tpl', [
+                        'JSON' => $tarif
             ]);
         } else {
             return '';
         }
     }
+
 }

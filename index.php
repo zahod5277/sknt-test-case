@@ -19,6 +19,7 @@ $data = [];
 $data = [
     'action' => isset($_REQUEST['action']) ? $_REQUEST['action'] : '',
     'group' =>  isset($_REQUEST['group']) ? $_REQUEST['group'] : '',
+    'id' => isset($_REQUEST['id']) ? $_REQUEST['id'] : '',
 ];
 
 $Core->handleRequest($req,$data);

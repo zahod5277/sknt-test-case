@@ -12,3 +12,36 @@
     overflow: hidden;
     background: $grey;
 }
+
+.tarifs__outer{
+    padding: 10px 0px 10px;
+}
+
+.tarifs__heading{
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.tarifs__heading-backward{
+    flex: 0 0 3%;
+}
+
+.tarifs__heading-text{
+    flex: 0 0 97%;
+    text-align: center;
+}
+
+.tarifs__item{
+    background: white;
+    margin-bottom: 10px;
+    padding: 10px 0px 10px 15px;
+    display: block;
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
+}
