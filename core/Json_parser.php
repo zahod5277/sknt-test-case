@@ -95,7 +95,7 @@ class JSON_parser {
                 $trfs[$i]['price'] = $price / $t['period'];
                 $trfs[$i]['payment'] = $price;
                 $trfs[$i]['discount'] = $baseprice * $t['period'] - $price;
-                $trfs[$i]['period'] = $t['period'];
+                $trfs[$i]['period'] = $t['period']  . ' ' . $this->declension($t['period'], array('месяц','месяца','месяцев'));
 
                 $i++;
             }
@@ -142,5 +142,22 @@ class JSON_parser {
         ];
         return $lexicons[$title];
     }
+    
+    public function declension($digit,$expr,$onlyword=true) //склонение слов
+    {
+        if(!is_array($expr)) $expr = array_filter(explode(' ', $expr));
+        if(empty($expr[2])) $expr[2]=$expr[1];
+        $i=preg_replace('/[^0-9]+/s','',$digit)%100;
+        if($onlyword) $digit='';
+        if($i>=5 && $i<=20) $res=$digit.' '.$expr[2];
+        else
+        {
+            $i%=10;
+            if($i==1) $res=$digit.' '.$expr[0];
+            elseif($i>=2 && $i<=4) $res=$digit.' '.$expr[1];
+            else $res=$digit.' '.$expr[2];
+        }
+        return trim($res);
+}
 
 }

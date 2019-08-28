@@ -7,7 +7,7 @@
 <div class="tarifs__outer flex-container">
     {foreach $JSON.tarifs as $data}
         <a class="tarifs__item" href="#" data-id="{$data.id}" data-action="GetTarif" data-select="tarif" data-group="{$JSON['title']}">
-            <h3 class="heading heading--border">{$data.period} месяц</h3>
+            <h3 class="heading heading--border">{$data.period}</h3>
             <div class="data flex-container">
                 <div class="data__item">
                     <div class="price">
