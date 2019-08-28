@@ -8,7 +8,7 @@
     <div class="tarifs__item">
         <h3 class="heading heading--border">Тариф {$JSON['title']}</h3>
         <div class="data flex-container">
-            <div class="data__item">
+            <div class="data__item data__item--widest">
                 <div class="price">
                     <span>{$JSON.price} ₽/мес</span>
                 </div>

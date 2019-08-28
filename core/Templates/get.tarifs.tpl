@@ -4,7 +4,7 @@
     </a>
     <h3 class="tarifs__heading-text">Тариф {$JSON['title']}</h3>
 </div>
-<div class="tarifs__outer">
+<div class="tarifs__outer flex-container">
     {foreach $JSON.tarifs as $data}
         <a class="tarifs__item" href="#" data-id="{$data.id}" data-action="GetTarif" data-select="tarif" data-group="{$JSON['title']}">
             <h3 class="heading heading--border">{$data.period} месяц</h3>

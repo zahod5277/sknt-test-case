@@ -1,8 +1,12 @@
 .data__item{
-    flex:0 0 97%;
+    flex:0 0 96%;
+}
+
+.data__item--widest{
+    flex: 0 0 100%;
 }
 
 .data__arrow{
-    flex: 0 0 3%;
+    flex: 0 0 4%;
     text-align: center;
 }

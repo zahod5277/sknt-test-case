@@ -3,6 +3,11 @@ body{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+*, :after, :before {
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
 p{
     margin: 0px;
 }

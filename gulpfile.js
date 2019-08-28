@@ -29,14 +29,14 @@ gulp.task('sass', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('app.min.css'))
         .pipe(prefixer())
-        .pipe(cleanCSS({compatibility: '*'}))
-        .pipe(cssmin())
+        //.pipe(cleanCSS({compatibility: '*'}))
+        //.pipe(cssmin())
         .pipe(gulp.dest(dist.sass));
 });
 
 gulp.task('js', function () {
     return gulp.src(['app/libs/jquery.js', 'app/libs/*/*.js', src.js])
-        .pipe(uglify())
+       // .pipe(uglify())
         .pipe(concat('main.min.js'))
         .pipe(gulp.dest(dist.js));
 });

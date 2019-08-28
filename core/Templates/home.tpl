@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <link rel="stylesheet" href="/assets/template/styles/app.min.css"/>
         <title>{$pagetitle}</title>
     </head>
     <body>
-        <div class="tarifs-group" data-select-parent="group">
+        <div class="flex-container tarifs-group" data-select-parent="group">
             {foreach $JSON as $data}
                 <div class="tarifs-group__item">
                     <div class="tarifs-group__item-title heading">
@@ -42,10 +43,10 @@
             {/foreach}
         </div>
         <div class="tarifs" data-select-parent="GetTarifs">
-            
+
         </div>
         <div class="tarif" data-select-parent="GetTarif">
-            
+
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
         <script src="/assets/template/scripts/main.min.js"></script>
