@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-        <link rel="stylesheet" href="/assets/template/styles/app.min.css"/>
+        <link rel="stylesheet" href="assets/template/styles/app.min.css"/>
         <title>{$pagetitle}</title>
     </head>
     <body>
@@ -49,6 +49,6 @@
 
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-        <script src="/assets/template/scripts/main.min.js"></script>
+        <script src="assets/template/scripts/main.min.js"></script>
     </body>
 </html>
